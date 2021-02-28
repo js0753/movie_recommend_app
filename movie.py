@@ -11,15 +11,21 @@ def hello():
 
 @app.route("/movieIn",methods=['POST'])
 def movieIn():
-    #print("here")
-    #name property in html used to extract data from the html form
-    mname = request.form['moviename']
-    sim_mov,img_list=mr.get_similar_movies(mname)
-    
-    
-    if(os.path.realpath(__file__)[:-8]!=os.getcwd()):
-        os.chdir(os.path.realpath(__file__)[:-8])
-    return render_template('movies.html',sim_mov=sim_mov,img_list=img_list)
+   #print("here")
+   #name property in html used to extract data from the html form
+   mname = request.form['moviename']
+   sim_mov,img_list=mr.get_similar_movies(mname)
+   
+   if(os.path.realpath(__file__)[:-8]!=os.getcwd()):
+      os.chdir(os.path.realpath(__file__)[:-8])
+
+   link = []
+   temp = []
+   for i in range(5):
+      temp = str(sim_mov[i]).replace(":","")
+      temp = temp.replace(" ","+")
+      link.append("http://www.google.com/search?q="+temp)
+   return render_template('movies.html',sim_mov=sim_mov,img_list=img_list,link=link)
     
 @app.route("/aboutus")
 def about():
