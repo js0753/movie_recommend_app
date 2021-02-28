@@ -90,27 +90,27 @@
         </div>
     </header>
 
-    
-
-    <div class="container">
+      <div class="container">
         <div class="row row-content align-items-center">
             <ul class="movie-list">
+                <h1>The Top 5 movies recommended for you are:</h1>
+                <br>
                 {% for i in range(sim_mov|length): %}
-                <li>
-                    <div class="col-auto">
-                        <figure class="rounded p-3 bg-white shadow-sm">
-                              <img src={{img_list[i]|string}} alt="" class="w-50 card-img-top">
-                              <figcaption class="p-4 card-img-bottom">
-                                <h2>{{sim_mov[i]}}</h2>
-                              </figcaption>
-                         </figure>
+                <li>                    
+                    <a href={{link[i]}}>                        
+                        <div class="div_hover">
+                            <figure class="rounded p-3 bg-white shadow-sm">
+                                <img src={{img_list[i]|string}} alt="" class="w-50 card-img-top">
+                                <figcaption class="p-4 card-img-bottom">
+                                <h2>{{i+1}}] {{sim_mov[i]}}</h2>                            
+                                </figcaption>
+                            </figure>
                         </div>
-                 </li>
-                 {% endfor %}
-              </ul>
-        </div>
-        
-        
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>    
     </div>
 
     <footer class="footer">
