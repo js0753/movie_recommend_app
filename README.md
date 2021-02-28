@@ -1,12 +1,12 @@
 # movie_recommend_app
 
-Install Libraries : 
-pip install pandas
-pip install selenium
-pip install flask
-pip install sklearn
-pip install tqdm 
+Install Libraries : <br>
+pip install pandas<br>
+pip install selenium<br>
+pip install flask<br>
+pip install sklearn<br>
+pip install tqdm <br>
 
 In the folder , open command line 
->set FLASK_APP=movie.py 
->python -m flask run
+\>set FLASK_APP=movie.py <br>
+\>python -m flask run
