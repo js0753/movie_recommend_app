@@ -4,6 +4,7 @@ def get_image(data_name):
         #data_name.lower
         data_spaced=data_name
         data_name=data_name.replace(" ","")
+        data_name=data_name.replace(":","")
         print("No white space :",data_name)
         #print(os.getcwd())
         #print(os.path.realpath(__file__)[:-21])
