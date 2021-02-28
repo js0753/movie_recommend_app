@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
     <title>Document</title>
 </head>
@@ -69,16 +70,66 @@
         <div class="container">
             <div class="row row-header">
                 <div class="col-12 col-sm-6">
-                    <h1>Movie Recommendation</h1>
+                    <h1>MovieRecommendation</h1>
                     <div style="font-size: 20px;line-height: 40px;">Want to watch more movies like that favourite movie of yours? Type it in and Press Go to get the best movies just like the one you like!</div>
                 </div>
                 <div class="col-12 offset-sm-3 col-sm-3 align-self-center">
                     <img src="static/img/logo.png" class="img-fluid">
-                </div>
-                
+                </div>          
             </div>
         </div>
     </header>
     {% block content %}{% endblock %}
+    <footer class="footer">
+        <div class="container">
+            <div class="row">             
+                <div class="col-4 offset-1 col-sm-2">
+                    <h5 style="font-weight: 300;">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a class ="footerlink" href="./index.html">Home</a></li>
+                        <li><a class ="footerlink" href="./aboutus.html">About</a></li>
+                        <li><a class ="footerlink" href="./contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- <div class="col-7 col-sm-5">
+                    
+		              <i class="fa fa-phone fa-lg"></i>: +91 981111111<br>
+		              <i class="fa fa-envelope fa-lg"></i>: <a href="mailto:jainam02@somaiya.edu">jainam02@somaiya.edu</a>
+		           
+                </div> -->
+                <div class="col-4" style="margin-left: 40%;">
+                    <div class>
+                        <a href="http://www.facebook.com/profile.php?id=" class="fa fa-facebook"></a>
+                        <a href="http://twitter.com/" class="fa fa-twitter"></a>
+                        <a href="http://google.com/+" class="fa fa-google"></a>
+                        <a href="http://www.linkedin.com/in/" class="fa fa-linkedin"></a>
+                        <!-- <a class="btn fa fa-google-plus" href=""></a>
+                        <a class="btnfa fa-facebook fa-lg" href=""><i class=""></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href=""><i class="fa fa-linkedin fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href=""><i class="fa fa-twitter fa-lg"></i></a> -->
+                        <!-- <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a> -->
+                    </div>
+                </div>
+           </div>
+           <div class="row justify-content-center" style="margin-top: 60px;">             
+                <div class="auto">
+                    <p>© Copyright 2021 MovieRecommendation</p>
+                </div>
+           </div>
+        </div>
+    </footer>
+    <script src="static/scripts/jquery/dist/jquery.slim.min.js"></script>
+<script>
+    $(document).ready(function () { 
+  
+  $('ul.navbar-nav > li') 
+          .click(function (e) { 
+      $('ul.navbar-nav > li') 
+          .removeClass('active'); 
+      $(this).addClass('active'); 
+  }); 
+}); 
+</script>
 </body>
 </html>

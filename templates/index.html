@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    {% extends "navbar.html" %}
+    {% extends "layout.html" %}
     {% block content %}
    
     
@@ -27,7 +27,7 @@
         <div class="row row-content align-items-center">
             <form class="col-12" action="/movieIn" method="POST" autocomplete="on">
   
-                <h1>Type The Movie You Like!</h1>
+                <h1 class="inputhead">Type The Movie You Like!</h1>
                 <div class="form-group row">
                 <div class="col-12 mh-100">
                     <input class="form-control moviename" type="text" id="moviename" name="moviename" placeholder="Enter Your Favourite Movie!">
@@ -36,8 +36,8 @@
      
             <div class="form-group row">
                 <div class="offset-md-8 col-3">
-                    <button type="submit" class="btn btn-primary btn-block">
-                        GO!!
+                    <button type="submit" class="btn btn-primary btn-block gobtn">
+                        GO
                     </button>
                 </div>
             </div>
@@ -47,13 +47,13 @@
         <div class="row row-content">
             <div class="col">
                 <div id="mycarousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner" role="listbox"> <!---->
+                    <div class="carousel-inner" role="listbox"> 
                         <div class="carousel-item active">
                             <img class="d-block img-fluid col-md-4"
                             src="static/img/spiderman.jpg" alt="spiderman">
                             <div class="carousel-caption d-none d-md-block offset-4">
                                 <h2>Comic Book Movies!</h2>
-                                <p class="d-none d-sm-block">Love Superhero Movies ? Type in one to find more like your favourite comic book movie! </p>
+                                <p class="d-none d-sm-block" style="margin-bottom: 100px;">Love Superhero Movies ? Type in one to find more like your favourite comic book movie! </p>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -62,7 +62,7 @@
                             >
                             <div class="carousel-caption d-none d-md-block offset-4">
                                 <h2>Prefer Spys?</h2>
-                                <p class="d-none d-sm-block">Have already seen James Bond and want to see more like that? Type it in!</p>
+                                <p class="d-none d-sm-block" style="margin-bottom: 100px;">Have already seen James Bond and want to see more like that? Type it in!</p>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -94,47 +94,12 @@
         
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">             
-                <div class="col-4 offset-1 col-sm-2">
-                    <h5>Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="./aboutus.html">About</a></li>
-                        <!--<li><a href="#">Blog</a></li>-->
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-7 col-sm-5">
-                    
-		              <i class="fa fa-phone fa-lg"></i>: +91 981111111<br>
-		              <i class="fa fa-envelope fa-lg"></i>: <a href="mailto:jainam02@somaiya.edu">jainam02@somaiya.edu</a>
-		           
-                </div>
-                <div class="col-12 col-sm-4 align-self-center">
-                    <div class="text-center ">
-                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
-                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
-                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a>
-                    </div>
-                </div>
-           </div>
-           <div class="row justify-content-center">             
-                <div class="auto">
-                    <p>© Copyright 2021 MovieRecommendation</p>
-                </div>
-           </div>
-        </div>
-    </footer>
-    {% endblock %}
-<!--jQuery first,then Popper.js,then Bootstrap JS-->
-<script src="static/scripts/jquery/dist/jquery.slim.min.js"></script>
+    <script src="static/scripts/jquery/dist/jquery.slim.min.js"></script>
 <script src="static/scripts/popper.js/dist/umd/popper.min.js"></script>
 <script src="static/scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+    {% endblock %}
+<!--jQuery first,then Popper.js,then Bootstrap JS-->
+
 
 </body>
 
