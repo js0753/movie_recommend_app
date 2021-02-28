@@ -23,6 +23,7 @@ def movieIn():
    temp = []
    for i in range(5):
       temp = str(sim_mov[i]).replace(":","")
+      temp = temp.replace("& ","")
       temp = temp.replace(" ","+")
       link.append("http://www.google.com/search?q="+temp)
    return render_template('movies.html',sim_mov=sim_mov,img_list=img_list,link=link)
