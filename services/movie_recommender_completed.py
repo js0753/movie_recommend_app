@@ -49,9 +49,9 @@ def get_similar_movies(movie_name):
         ## Step 7: Get a list of similar movies in descending order of similarity score
         sorted_similar_movies = sorted(similar_movies,key=lambda x:x[1],reverse=True)
 
-        ## Step 8: Print titles of first 20 movies
+        ## Step 8: Print titles of first 5 movies
         i=0
-        print("The Top 20 movies recommended for you are: ")
+        print("The Top 5 movies recommended for you are: ")
         movie_list=[]
         img_paths=[]
         for element in sorted_similar_movies:
@@ -60,7 +60,7 @@ def get_similar_movies(movie_name):
                         img_paths.append('static/img/web_images/'+web_scrapper_test.get_image(get_title_from_index(element[0])))
                         movie_list.append(get_title_from_index(element[0]))
                 i=i+1
-                if i>20:
+                if i>5:
                         break
         return movie_list,img_paths
 
