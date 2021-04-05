@@ -64,6 +64,12 @@ def get_similar_movies(movie_name):
                         break
         return movie_list,img_paths
 
+
+def getAllMovies():
+        #print(df['title'].head())
+        return list(df['title'])
+
 if __name__=="__main__":
+        print(getAllMovies()[0])
         movie_user_likes = input("Enter Movie Name: ")
         get_similar_movies(movie_user_likes)
