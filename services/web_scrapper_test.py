@@ -5,13 +5,13 @@ def get_image(data_name):
         data_spaced=data_name
         data_name=data_name.replace(" ","")
         data_name=data_name.replace(":","")
-        print("No white space :",data_name)
+        # print("No white space :",data_name)
         #print(os.getcwd())
         #print(os.path.realpath(__file__)[:-21])
         if(os.path.realpath(__file__)[:-21]!=os.getcwd()):
                 os.chdir(os.path.realpath(__file__)[:-21])
         if(os.path.realpath(__file__)[:-21]==os.getcwd()):
-                print("hello ")
+                # print("hello ")
                 os.chdir('../static/img/web_images')
         path=data_name
         if(os.path.isdir(path)==False):
@@ -52,7 +52,7 @@ def get_image(data_name):
                         print("Done")
                         driver.quit()
         else:
-                 print("Image already exists at "+data_name+f'/{data_name}0.jpeg')
+                 print("Image already exists at "+data_name+f'/{data_name}0.jpeg',"\n")
         return data_name+f'/{data_name}0.jpeg'
 
 if __name__=="__main__":
