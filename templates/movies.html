@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='scripts/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='scripts/bootstrap-social/bootstrap-social.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
+    <link rel = "stylesheet" href = ../static/styles/styles.css/>
     <title>Movie Recommendation</title>
 </head>
 
@@ -25,24 +26,68 @@
                 <h1>The Top 5 movies recommended for you are:</h1>
                 <br>
                 {% for i in range(sim_mov|length): %}
-                <li>                    
-                    <a href={{link[i]}}>                        
+                                    
+                    <!-- <a href={{link[i]}}>                        
                         <div class="div_hover">
                             <figure class="rounded p-3 bg-white shadow-sm">
                                 <img src={{img_list[i]|string}} alt="" class="w-50 card-img-top">
                                 <figcaption class="p-4 card-img-bottom">
+                                <h2>{{releaseDate[i]}}] {{overview[i]}}</h2>                            
                                 <h2>{{i+1}}] {{sim_mov[i]}}</h2>                            
                                 </figcaption>
                             </figure>
                         </div>
-                    </a>
-                </li>
+                    </a> -->
+
+                    <div class="wrapper">
+                        <div class="main_card">
+                            <div class="card_left">
+                                <div class="card_datails">
+                                    <h1>{{sim_mov[i]}}</h1>
+                                    <div class="card_cat">
+                                        <p class="PG">{{voteAverage[i]}}</p>
+                                        <p class="year">{{releaseDate[i]}}</p>
+                                        <p class="genre">{{genres[i]}}</p>
+                                        <p class="time">{{runTime[i]}}m</p>
+                                    </div>
+                                    <p class="disc">{{overview[i]}}</p>
+                                    <a href={{link[i]}} target="_blank">Know More</a>                
+                                </div>
+                            </div>
+                            <div class="card_right">
+                                <div class="img_container">
+                                    <img src={{img_list[i]|string}} alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                
                 {% endfor %}
             </ul>
         </div>    
     </div>
 
-    <script src="static/scripts/jquery/dist/jquery.slim.min.js"></script>
+    <!-- <div class="wrapper">
+        <div class="main_card">
+            <div class="card_left">
+                <div class="card_datails">
+                    <h1>{{sim_mov[i]}}</h1>
+                    <div class="card_cat">
+                        <p class="PG">{{voteAverage[i]}}</p>
+                        <p class="year">{{releaseDate[i]}}</p>
+                        <p class="genre">{{genres[i]}}</p>
+                        <p class="time">{{runTime[i]}}</p>
+                    </div>
+                    <p class="disc">{{overview[i]}}</p>
+                    <a href={{link[i]}} target="_blank">Know More</a>                
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+<script src="static/scripts/jquery/dist/jquery.slim.min.js"></script>
 <script src="static/scripts/popper.js/dist/umd/popper.min.js"></script>
 <script src="static/scripts/bootstrap/dist/js/bootstrap.min.js"></script>
     {% endblock %}

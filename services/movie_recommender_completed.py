@@ -9,6 +9,21 @@ def get_title_from_index(index):
 
 def get_index_from_title(title):
 	return df[df.title == title]["index"].values[0]
+
+def get_release_date_from_index(index):
+	return df[df.index == index]["release_date"].values[0]
+
+def get_overview_from_index(index):
+	return df[df.index == index]["overview"].values[0]
+
+def get_vote_average_from_index(index):
+	return df[df.index == index]["vote_average"].values[0]
+
+def get_genre_from_index(index):
+	return df[df.index == index]["genres"].values[0]
+
+def get_runtime_from_index(index):
+	return df[df.index == index]["runtime"].values[0]
 ##################################################
 
 ##Step 1: Read CSV File
@@ -39,6 +54,14 @@ count_matrix = cv.fit_transform(df["combined_features"])
 ##Step 5: Compute the Cosine Similarity based on the count_matrix
 cosine_sim = cosine_similarity(count_matrix) 
 
+def get_movie_details(movie_name):
+        movie_index = get_index_from_title(movie_name)
+        relDate = get_release_date_from_index(movie_index)
+        overView = get_overview_from_index(movie_index)
+        voteAvg = get_vote_average_from_index(movie_index)
+        genre = get_genre_from_index(movie_index)
+        rT = get_runtime_from_index(movie_index)
+        return relDate, overView, voteAvg, genre, rT
 
 ## Step 6: Get index of this movie from its title
 def get_similar_movies(movie_name):
