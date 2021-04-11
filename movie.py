@@ -3,10 +3,18 @@ from services import movie_recommender_completed as mr
 import os
 app = Flask(__name__)
 
+"""
+#When two same app.route("/") first one counts  
+@app.route("/")
+def hello1():
+   return render_template('aboutus.html')
 
+"""
 @app.route("/")
 def hello():
-   return render_template('index.html')
+   return render_template('index.html',mov_list=mr.getAllMovies())
+
+
 
 
 @app.route("/movieIn",methods=['POST'])
