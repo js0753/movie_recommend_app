@@ -44,7 +44,7 @@ def movieIn():
       link.append("http://www.google.com/search?q="+temp)      
       relDate,overView,voteAvg,genre,rT=mr.get_movie_details(sim_mov[i])
       releaseDate.append(relDate[0:4])
-      overview.append(overView[0:200]) 
+      overview.append(overView) 
       voteAverage.append(voteAvg) 
       genres.append(genre) 
       conversion = datetime.timedelta(seconds=rT*60)
