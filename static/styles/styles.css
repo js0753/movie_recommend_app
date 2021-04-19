@@ -182,8 +182,9 @@ body {
 
 .main_card {
 	color: #fff;
-    min-width: 960px;
-    min-height: 590px;
+    /*
+    min-width: 760px;
+    min-height: 390px;
 	/* width: 760px;
 	height: 390px; */
 	margin: 50px auto;
@@ -202,13 +203,13 @@ body {
 }
 
 .card_left {
-    min-width: 600px;
-    min-height: 590px;
+    /*min-width: 400px;
+    min-height: 390px;
 	/* width: 90%; */
 }
 
 .card_datails {
-	min-width: 600px;
+	/*min-width: 600px;*/
 	padding: 30px;
 	margin-top: -25px;
 }
@@ -216,7 +217,7 @@ body {
 	font-size: 30px;
 }
 .card_right img {
-	height: 390px;
+	/*height: 390px;*/
 	border-radius: 2px;
 }
 .card_right {

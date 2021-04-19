@@ -65,7 +65,10 @@ def get_movie_details(movie_name):
 
 ## Step 6: Get index of this movie from its title
 def get_similar_movies(movie_name):
-        movie_index = get_index_from_title(movie_name)
+        try:
+                movie_index = get_index_from_title(movie_name)
+        except:
+                return [-1,-1]
 
         similar_movies =  list(enumerate(cosine_sim[movie_index]))
 
