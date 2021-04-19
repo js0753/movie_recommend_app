@@ -30,27 +30,10 @@ def movieIn():
    if(os.path.realpath(__file__)[:-8]!=os.getcwd()):
       os.chdir(os.path.realpath(__file__)[:-8])
    
-<<<<<<< HEAD
-=======
-   for i in range(5):
-      temp = str(sim_mov[i]).replace(":","")
-      temp = temp.replace("& ","")
-      temp = temp.replace(" ","+")
-      link.append("http://www.google.com/search?q="+temp)      
-      relDate,overView,voteAvg,genre,rT=mr.get_movie_details(sim_mov[i])
-      releaseDate.append(relDate[0:4])
-      overview.append(overView) 
-      voteAverage.append(voteAvg) 
-      genres.append(genre) 
-      conversion = datetime.timedelta(seconds=rT*60)
-      converted_time = str(conversion)
-      converted_time = converted_time[:-3]
-      converted_time = converted_time.replace(":","h ")
->>>>>>> 4de98f82e998fa4158c2a0717afe51f425c75695
 
    if(sim_mov==-1):
        return render_template('error.html')
-       
+
    else:
 
       link = []
