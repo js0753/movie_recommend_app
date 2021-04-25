@@ -13,24 +13,36 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='scripts/bootstrap-social/bootstrap-social.css') }}">
         <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
         <title>Movie Recommendation</title>
+        <style>
+            /* h2{
+                color: aliceblue;
+            } 
+        
+            img {
+                
+            }*/
+            .contain {  
+                background: url('../static/img/about.jpg') no-repeat center; 
+                background-size: cover;
+            }
+        </style>
     </head>
 
 <body>
     {% extends "layout.html" %}
     {% block content %}
-        
-    <div class="container">
+    <div class="container contain">
         <div class="row">
             <ol class="col-12 breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item active">About</li>
             </ol>
-            <div class="col-12">
-                <h3>About Us</h3>
+            <!-- <div class="col-12">
+                <h2>About Us</h2>
                 <hr>
-            </div>
+            </div> -->
         </div>
-
+        <br><br><br><br><br><br><br><br><br><br>
         <div  class="row row-content">
             <div class="col-12 col-sm-12">
                 <h2>Group Information</h2>
@@ -82,9 +94,7 @@
                 
             </div>
         </div>
-        
-                
-        </div>
+    </div>
     
     <script src="static/scripts/jquery/dist/jquery.slim.min.js"></script>
 <script src="static/scripts/popper.js/dist/umd/popper.min.js"></script>

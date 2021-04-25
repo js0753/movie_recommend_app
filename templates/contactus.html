@@ -13,12 +13,25 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='scripts/bootstrap-social/bootstrap-social.css') }}">
         <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
         <title>Movie Recommendation</title>
+        <style>
+            /* h2{
+                color: aliceblue;
+            } 
+        
+            img {
+                
+            }*/
+            .contain {  
+                background: url('../static/img/contact.jpg') no-repeat center; 
+                background-size: cover;
+            }
+        </style>
     </head>
-    
+
 <body>
     {% extends "layout.html" %}
     {% block content %}
-        
+    <div class="contain">
     <div class="container">
         <div class="row">
             <ol class="col-12 breadcrumb">
@@ -31,7 +44,7 @@
             </div>
         </div>
 
-        <div class="row row-content">
+        <!-- <div class="row row-content">
            <div class="col-12">
               <h3>Contact Information</h3>
            </div>
@@ -49,8 +62,8 @@
                     <a role="button" class="btn btn-success" href="mailto:confusion@food.net"><i class="fa fa-envelope-o"></i> E-Mail</a>
                 </div>
             </div>
-        </div>
-
+        </div> -->
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <div class="row row-content">
            <div class="col-12">
               <h3>Send us your Feedback</h3>

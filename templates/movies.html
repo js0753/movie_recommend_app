@@ -13,16 +13,29 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='scripts/bootstrap-social/bootstrap-social.css') }}">
     <link rel = "stylesheet" href = ../static/styles/styles.css/>
     <title>Movie Recommendation</title>
+    <style>
+        /* h2{
+            color: aliceblue;
+        } 
+    
+        img {
+            
+        }*/
+        .contain {  
+            background: url('../static/img/movie_bg.jpg') no-repeat center; 
+            background-size: cover;
+        }
+    </style>
 </head>
 
 <body>
     {% extends "layout.html" %}
     {% block content %}
 
-      <div class="container">
+      <div class="container contain">
         <div class="row row-content align-items-center">
             <ul class="movie-list">
-                <h1>The Top 5 movies recommended for you are:</h1>
+                <h1 style="color:#ffffff;">The Top 5 movies recommended for you are:</h1>
                 <br>
                 {% for i in range(sim_mov|length): %}
                     <div class="wrapper">
