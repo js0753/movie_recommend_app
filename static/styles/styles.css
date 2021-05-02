@@ -203,12 +203,18 @@ body {
 
 .main_card p{
     color: black;
+    border-radius: 10px;
+}
+
+.wrapper{
+    border-radius: 10px;
 }
 
 .card_left {
     /* min-width: 600px; */
     min-height: 590px;
 	width: 90%;
+    border-radius: 10px;
 }
 
 .card_datails {
@@ -222,10 +228,12 @@ body {
 }
 .card_right img {
 	height: 400px;
-	border-radius: 2px;
+    width: 300px;
+	border-radius: 10px;
 }
 .card_right {
-	border-radius: 2px;
+	border-radius: 10px;
+    /* width: 0%; */
 }
 
 .card_cat {
