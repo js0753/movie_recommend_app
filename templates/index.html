@@ -12,7 +12,39 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='scripts/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='scripts/bootstrap-social/bootstrap-social.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
+    
     <title>Movie Recommendation</title>
+    <style>
+        .loader-background{
+            position: absolute;
+            top:0;
+            left:0;
+            height:100%;
+            width:100%;
+            background-color: white;
+            visibility: hidden;
+        }
+        .loader {
+            position: absolute;
+            top: 40%;
+            left: 45%;
+            border: 16px solid #f3f3f3; /* Light grey */
+            border-top: 16px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+          }
+          
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+        
+          .flexstack-container{
+            position: relative;
+          }
+            </style>
     <!-- <style>
         h1{
             background-color: white;
@@ -27,10 +59,13 @@
 <body>
     {% extends "layout.html" %}
     {% block content %}
+    <div class="flexstack-container">
     <div style="background-image: url('../static/img/background.jpg');">
+        
         <div class="container">
+            
             <div class="row row-content align-items-center">
-                <form class="col-12" action="/movieIn" method="POST" autocomplete="off">
+                <form id="myform" class="col-12" action="/movieIn" method="POST" autocomplete="off">
                     
                     <!-- <h1 class="inputhead">Type The Name of the Movie You Like!</h1> -->
                     
@@ -39,7 +74,7 @@
                             <input class="form-control moviename" type="text" id="autocomplete" name="moviename" placeholder="Enter a movie name">
                         </div>
                         <span class="input-group-btn">
-                            <button type="submit" class="btn btn-primary btn-block gobtn">
+                            <button id="goButton" type="submit" class="btn btn-primary btn-block gobtn" >
                                 GO
                             </button>
                         </span>
@@ -47,6 +82,7 @@
             </form>
 
             </div>
+            
         </div>
             <div class="container">
             <div class="row row-content">
@@ -96,6 +132,11 @@
                 </div>
             </div>      
         </div>
+        
+    </div>
+    <div class="loader-background" id="loader" >
+    <div class="loader"></div> 
+    </div>
     </div>
 
 <script src="static/scripts/jquery/dist/jquery.slim.min.js"></script>
@@ -103,6 +144,12 @@
 <script src="static/scripts/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
+$(function(){
+    $('#myform').submit(function(){
+        document.getElementById("loader").style.visibility = "visible"; 
+        //alert('This happened before submit. Clicking OK will proceed.');
+    });
+});
 
 var mov_json='{{ mov_list|tojson }}'
 var mov_list=JSON.parse(mov_json)
@@ -216,6 +263,9 @@ function autocomplete(inp, arr) {
 }
 
 autocomplete(document.getElementById("autocomplete"), mov_list)
+
+
+    
 </script>
     {% endblock %}
 <!--jQuery first,then Popper.js,then Bootstrap JS-->
