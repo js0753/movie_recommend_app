@@ -83,8 +83,8 @@ def get_similar_movies(movie_name):
         for element in sorted_similar_movies:
                 if i!=0:
                         print(str(i)+"]\t",get_title_from_index(element[0]))
-                        #img_paths.append('static/img/web_images/'+web_scrapper_test.get_image(get_title_from_index(element[0])).replace(":",""))
-                        img_paths.append(web_scrapper_test.get_image(get_title_from_index(element[0])))
+                        img_paths.append('static/img/web_images/'+web_scrapper_test.get_image(get_title_from_index(element[0])).replace(":",""))
+                        #img_paths.append(web_scrapper_test.get_image(get_title_from_index(element[0])))
 
                         movie_list.append(get_title_from_index(element[0]))
                 i=i+1
